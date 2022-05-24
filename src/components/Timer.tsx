@@ -18,17 +18,17 @@ export function Timer() {
         masterDeadLine.getMinutes() - currentTime.getMinutes(),
         masterDeadLine.getSeconds() - currentTime.getSeconds()
     );
-    const timeLeftMS = masterDeadLine.valueOf() - currentTime.valueOf();
-    const timeLeftS = masterDeadLine.getSeconds() - currentTime.getSeconds();
+    /* const timeLeftMS = masterDeadLine.valueOf() - currentTime.valueOf(); */
+    /*  const timeLeftS = masterDeadLine.getSeconds() - currentTime.getSeconds();
     const timeLeftMin = masterDeadLine.getMinutes() - currentTime.getMinutes();
-    const timeLeftH = masterDeadLine.getHours() - currentTime.getHours();
+    const timeLeftH = masterDeadLine.getHours() - currentTime.getHours(); */
     const dayDiff = masterDeadLine.getDate() - currentTime.getDate();
 
-    const timeLeftD = masterDeadLine.getDate() - currentTime.getDate();
+    /*  const timeLeftD = masterDeadLine.getDate() - currentTime.getDate();
 
     const timeLeftMonth = masterDeadLine.getMonth() - currentTime.getMonth();
     //const timeLeftD = timeLeftMS / (1000 * 60 * 60 * 24)
-    const timeLeftY = timeLeftMS / (1000 * 60 * 60 * 24 * 365);
+    const timeLeftY = timeLeftMS / (1000 * 60 * 60 * 24 * 365); */
 
     return (
         <h1>
