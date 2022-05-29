@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logoOrange from "../images/ets_orange.png";
 
 export function Timer() {
     const masterDeadLine = new Date(2022, 5, 10, 14, 0);
@@ -31,17 +32,26 @@ export function Timer() {
     const timeLeftY = timeLeftMS / (1000 * 60 * 60 * 24 * 365); */
 
     return (
-        <h1>
-            Days: {dayDiff ? timeLeft.getDate() : "0"}{" "}
-            {/* {Math.round(timeLeftD)} */}
-            <br /> Hours: {timeLeft.getHours()}{" "}
-            {/* Does not work {24 - Math.abs(timeLeftH)} */}
-            <br /> Minutes: {timeLeft.getMinutes()}{" "}
-            {/* {59 - Math.abs(timeLeftMin)} */}
-            <br /> Seconds: {timeLeft.getSeconds()}{" "}
-            {/* {60 - Math.abs(timeLeftS)} */}
-            <br /> Until {masterDeadLine.toLocaleDateString()}{" "}
-            {masterDeadLine.toLocaleTimeString()}
-        </h1>
+        <>
+            <img src={logoOrange} alt="Eye Tracking Studio"></img>
+            <h1>
+                {/*Years:  Does not work {timeLeft.getFullYear()} */}{" "}
+                {/* {Math.max(Math.floor(timeLeftY), 0)} */}
+                {/*<br /> Months:  {timeLeft.getMonth()} */}{" "}
+                {/* {Math.max(Math.floor(timeLeftMonth), 0)} */}
+                {dayDiff ? timeLeft.getDate() : "0"} dager{" "}
+                {/* {Math.round(timeLeftD)} */}
+                {timeLeft.getHours()} timer{" "}
+                {/* Does not work {24 - Math.abs(timeLeftH)} */}
+                {timeLeft.getMinutes()} minutter{" "}
+                {/* {59 - Math.abs(timeLeftMin)} */}
+                {timeLeft.getSeconds()} sekunder{" "}
+                {/* {60 - Math.abs(timeLeftS)} */}
+                <br /> til {masterDeadLine.toLocaleDateString()}{" "}
+                {masterDeadLine.toLocaleTimeString()}
+                {/* <br /> Current time {currentTime.toLocaleDateString()}{" "} */}
+                {/* {currentTime.toLocaleTimeString()} */}
+            </h1>
+        </>
     );
 }
