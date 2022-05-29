@@ -30,7 +30,10 @@ export function Timer() {
     const timeLeftMonth = masterDeadLine.getMonth() - currentTime.getMonth();
     //const timeLeftD = timeLeftMS / (1000 * 60 * 60 * 24)
     const timeLeftY = timeLeftMS / (1000 * 60 * 60 * 24 * 365); */
-
+    const seconds =
+        timeLeft.getSeconds().toString().length >= 2
+            ? timeLeft.getSeconds()
+            : `0${timeLeft.getSeconds().toString()}`;
     return (
         <>
             <img src={logoOrange} alt="Eye Tracking Studio"></img>
@@ -45,8 +48,7 @@ export function Timer() {
                 {/* Does not work {24 - Math.abs(timeLeftH)} */}
                 {timeLeft.getMinutes()} minutter{" "}
                 {/* {59 - Math.abs(timeLeftMin)} */}
-                {timeLeft.getSeconds()} sekunder{" "}
-                {/* {60 - Math.abs(timeLeftS)} */}
+                {seconds} sekunder {/* {60 - Math.abs(timeLeftS)} */}
                 <br /> til {masterDeadLine.toLocaleDateString()}{" "}
                 {masterDeadLine.toLocaleTimeString()}
                 {/* <br /> Current time {currentTime.toLocaleDateString()}{" "} */}
