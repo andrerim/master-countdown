@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import logoOrange from "../images/ets_orange.png";
 
 export function Timer() {
-    const masterDeadLine = new Date(2022, 5, 10, 14, 0);
+    const masterDeadLine = new Date(2022, 5, 8, 23, 59, 59);
     let [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
